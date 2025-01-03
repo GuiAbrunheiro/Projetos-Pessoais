@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenario 1</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    overflow-y: scroll;
+}
+
+nav {
+    height: fit-content;
+    background-color: rgb(57, 57, 224);
+    position: fixed;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(57, 57, 224);
+}
+#titulo{
+    font-size: 20px;
+    color: white;
+}
+
+ul li {
+    position: relative;
+}
+
+ul li svg {
+    width: 80px;
+    height: auto;
+    margin-left: 150px;
+}
+
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    background-color:#3939e0;
+}
+
+ul li ul.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(143, 143, 189);
+    display: none;
+    min-width: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown li a {
+    padding: 10px 20px;
+    background-color: rgb(115, 115, 187);
+    color: rgb(255, 255, 255);
+}
+
+ul li a:hover, ul li ul.dropdown li a:hover {
+    background-color: rgb(129, 129, 192);
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+#Matriz{
+background-color: rgb(255, 255, 255);
+width: 100%;
+height: 963px;
+box-sizing: border-box;
+}
+#Matriz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Matriz h1{
+    font-size: 150px;
+    margin-bottom: 27px;
+    margin-top: 80px;
+}
+hr{
+    width: 80%;
+    margin-left: 190px;
+    color: #0A0A23;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 80%;
+}
+.Construtor{
+    border: solid #0A0A23 3px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.Construtor h2{
+ font-size: 50px;
+ margin-top: 40px;
+ margin-bottom: 40px;
+}
+.Construtor label{
+    font-size: 22px;
+}
+.Construtor div{
+    margin-top: 30px;
+margin-bottom: 18px;
+}
+.Construtor button{
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: solid black 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #111141;
+    color: white;
+    
+}
+.Construtor input{
+    padding: 2px;
+    font-size: 15px;
+}
+
+.Get{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: 100%;
+    margin-right: 20px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.Get h2{
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+   }
+.Get label{
+    font-size: 22px;
+}
+.Get div{
+    margin-top: 22px;
+margin-bottom: 18px;
+}
+.Get button{
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    background-color: #111141;
+    color: white;
+}
+.Get .Limpar{
+    margin-top: 110px;
+    font-size: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.Get input{
+    padding: 2px;
+    font-size: 15px;
+}
+.Get .LimparV{
+    margin-top: 185px;
+    font-size: 30px;
+}
+
+.Set{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.Set h2{
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+   }
+.Set label{
+    font-size: 22px;
+}
+.Set div{
+    margin-top: 22px;
+margin-bottom: 18px;
+}
+.Set button{
+    margin-top: 40px;
+    padding: 12px 50px;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    background-color: #111141;
+    color: white;
+}
+.Set input{
+    padding: 2px;
+    font-size: 15px;
+}
+
+
+#Vetor{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+}
+#Vetor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Vetor h1{
+    font-size: 150px;
+    margin-bottom: 27px;
+    margin-top: 80px;
+}
+#Vetor .QtdElementosVetorV{
+    margin-bottom: 40px;
+}
+#Vetor .NumerosVetorV{
+    margin-bottom: 40px;
+}
+#Vetor .IndiceElementoVetorV{
+    margin-bottom: 40px;
+}
+#Vetor .ElementoAchadoVetorV{
+    margin-top: 40px;
+}
+.containerV{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 80%;
+}
+.VetorA{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+.VetorB{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+.ResultadoSomaV{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+.tableV{
+    border: solid #0A0A23 3px;
+    width: 90%;
+    height: 40%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    margin: 10px;
+    margin-top: 60px;
+    align-items: center;
+    box-sizing: border-box;
+}
+.VetorA div,.VetorB div{
+    margin-top: 22px;
+margin-bottom: 25px;
+}
+.VetorA button{
+    padding: 10px 20px;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 200px;
+    margin-left: 174px;
+    font-size: 30px;
+}
+.VetorB button{
+    padding: 10px 20px;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 200px;
+    margin-right: 150px;
+    font-size: 30px;
+}
+#transposta{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#transposta h1{
+    font-size: 150px;
+    margin-bottom: 40px;
+    margin-top: 80px;
+}
+#transposta{
+    font-size: 22px;
+}
+.containerT{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 80%;
+}
+.Matriz{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.Matriz h2{
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.Matriz label{
+    font-size: 22px;
+}
+.Matriz div{
+    margin-top: 22px;
+margin-bottom: 25px;
+}
+.Matriz button{
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+    background-color: #111141;
+    color: white;
+}
+.Matriz input{
+    padding: 2px;
+    font-size: 15px;
+}
+.MatrizTransposta{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.MatrizTransposta h2{
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.Matriz .LimparT{
+    margin-top: 80px;
+    margin-left: 777px;
+    font-size: 30px;
+}
+table{
+width: 100%;
+height: 100%;
+}
+.table{
+    border: solid #0A0A23 3px;
+    width: 90%;
+    height: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    margin: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+#soma_de_matrizes{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#soma_de_matrizes label{
+font-size: 22px;
+}
+#soma_de_matrizes input{
+    padding: 2px;
+    font-size: 15px;
+}
+.containerS{
+    display: flex;
+    flex-direction: row;
+    height: 550px;
+    width: 85%;
+}
+#soma_de_matrizes h1{
+    font-size: 150px;
+    margin-bottom: 50px;
+    margin-top: 90px;
+}
+.containerS h2{
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.containerS label{
+    font-size: 22px;
+}
+.MatrizA div,.MatrizB div{
+    margin-top: 22px;
+margin-bottom: 25px;
+}
+.MatrizA button{
+    padding: 12px 30px;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 120px;
+    margin-left: 174px;
+    font-size: 30px;
+    background-color: #111141;
+    color: white;
+}
+.MatrizB button{
+    padding: 12px 30px;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 120px;
+    margin-right: 150px;
+    font-size: 30px;
+    background-color: #111141;
+    color: white;
+}
+.containerS input{
+    padding: 2px;
+}
+.MatrizA{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.MatrizB{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.ResultadoSoma{
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+#soma_de_vetores{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#soma_de_vetores h1{
+    font-size: 150px;
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
+#soma_de_vetores button{
+    background-color: #111141;
+    color: white;
+    padding: 12px 30px;
+}
+#multiplicação_de_matriz_por_escalar{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#multiplicação_de_matriz_por_escalar h1{
+    font-size: 100px;
+    margin-bottom: 60px;
+    margin-top: 110px;
+}
+#multiplicação_de_matriz_por_escalar h2{
+    margin-bottom: 15px;
+}
+.Matriz .MultiplicarMatriz{
+    margin-top: 10px;
+    background-color: #111141;
+    color: white;
+}
+.Matriz .LimparMM{
+    margin-top: 80px;
+    margin-left: 777px;
+    font-size: 30px;
+    background-color: #111141;
+    color: white;
+}
+
+#multiplicação_de_matriz_escalar{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#multiplicação_de_matriz_escalar h1{
+    font-size: 100px;
+    margin-bottom: 60px;
+    margin-top: 120px;
+}
+#multiplicação_de_vetor_escalar{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#multiplicação_de_vetor_escalar h1{
+    font-size: 100px;
+    margin-bottom: 60px;
+    margin-top: 150px;
+}
+#multiplicação_de_vetor_escalar button{
+    background-color: #111141;
+    color: white;
+    padding: 12px 30px;
+}
+
+.VetorA{
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.VetorB{
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.ResultadoSomaV{
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.tableV{
+    border-radius: 10px;
+}
+#multiplicação_de_matrizes{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#multiplicação_de_matrizes h1{
+    font-size: 100px;
+    margin-bottom: 60px;
+    margin-top: 135px;
+}
+#eliminação_gaussiana{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#eliminação_gaussiana h1{
+    font-size: 100px;
+    margin-bottom: 60px;
+    margin-top: 120px;
+}
+#eliminação_gaussiana .LimparMM{
+margin-top: 142px;
+background-color: #111141;
+color: white;
+}
+#sistema{
+    background-color: rgba(255, 255, 255, 0.966);
+    width: 100%;
+    height: 963px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#sistema h1{
+    font-size: 100px;
+    margin-bottom: 60px;
+    margin-top: 120px;
+}
+#sistema .LimparMM{
+    margin-top: 120px;
+    background-color: #111141;
+    color: white;
+    }
+    #sistema .MultiplicarMatriz{
+        margin-top: 35px;
+        background-color: #111141;
+        color: white;
+    }
+
+
+    </style>
+
+</head>
+<body>
+  <nav>
+    <ul>
+       <li><div id="iamgem"><svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="3000px" height="3000px" viewBox="0 0 3000 3000" enable-background="new 0 0 3000 3000" xml:space="preserve">
+   <g id="Camada_2">
+       <g id="Camada_1-2">
+           <path fill="#E4F2FE" d="M2598.388,1936.197H2305.01h-1.717c141.684-249.68,148.684-553.781,18.637-809.715
+               c1.832-0.679,3.771-1.023,5.725-1.017h270.733c61.003,0,85.685-81.933,35.622-116.855l-984.583-654.057
+               c-53.129-36.963-123.648-36.963-176.777,0l-984.774,653.675c-50.063,34.923-25.444,116.855,35.623,116.855h271.623
+               c1.75,0.006,3.488,0.284,5.152,0.827c-130.318,256.066-123.34,560.46,18.574,810.287h-295.35
+               c-61.004,0-85.685,81.932-35.623,116.854l984.584,653.421c53.128,36.963,123.647,36.963,176.777,0l985.028-653.675
+               C2684.326,2017.874,2659.647,1936.197,2598.388,1936.197z M1818.506,2030.216c-1.961,4.853-7.486,7.194-12.34,5.233
+               c-2.837-1.147-4.945-3.595-5.661-6.568c-25.446-107.315-103.18-208.84-236.953-208.84c-133.777,0-211.511,101.462-236.955,208.84
+               c-1.225,5.088-6.343,8.222-11.433,6.996c-2.976-0.715-5.422-2.824-6.569-5.661c-57.75-140.81,9.581-301.773,150.389-359.524
+               c140.808-57.749,301.772,9.582,359.522,150.391C1845.987,1888.085,1845.987,1963.213,1818.506,2030.216z M2036.759,1913.042
+               c-18.004,42.917-42.838,82.638-73.535,117.618c-5.686,6.131-15.265,6.493-21.396,0.808c-4.373-4.055-5.959-10.298-4.049-15.946
+               l0.571-1.399c65.694-191.91-29.734-401.745-217.552-478.361c-189.627-78.434-406.352,3.562-496.172,183.394l-0.508,1.144
+               c-3.468,7.608-12.448,10.964-20.056,7.496c-5.739-2.616-9.255-8.519-8.824-14.812c3.531-46.294,14.553-91.71,32.633-134.475
+               c93.127-221.242,349.865-325.628,573.205-233.265C2024.419,1437.607,2129.95,1691.865,2036.759,1913.042L2036.759,1913.042z
+                M2207.048,1619.665c-1.805,12.198-13.155,20.625-25.354,18.821c-9.524-1.408-17.074-8.765-18.729-18.249
+               c-6.255-36.883-16.383-73.002-30.216-107.759c-109.095-275.566-438.413-422.319-714.807-314.815
+               c-276.393,107.505-395.22,427.663-286.252,703.229c13.772,34.823,31.125,68.123,51.779,99.362
+               c6.669,10.288,3.734,24.034-6.554,30.702c-8.128,5.271-18.735,4.661-26.206-1.506c-276.4-227.623-315.94-636.215-88.317-912.615
+               c227.624-276.4,636.216-315.94,912.616-88.317c85.934,70.77,152.196,162.475,192.409,266.281
+               C2208.477,1397.844,2222.132,1509.771,2207.048,1619.665z"/>
+       </g>
+   </g>
+   </svg></div></li>
+       <li id="titulo">CENÁRIO 1</li>
+       <li class="drop"><a href="">Menu de Funções ▼</a> 
+        <ul class="dropdown">
+            <li><a href="#Matriz">Matriz</a></li>
+            <li><a href="#Vetor">Vetor</a></li>
+            <li><a href="#transposta">transposta</a></li>
+            <li><a href="#soma_de_matrizes">soma de matrizes</a></li>
+            <li><a href="#soma_de_vetores">soma de vetores</a></li>
+            <li><a href="#multiplicação_de_matriz_por_escalar">multiplicação matriz por numero</a></li>
+            <li><a href="#multiplicação_de_matriz_escalar">multiplicação matriz termo a termo</a></li>
+            <li><a href="#multiplicação_de_vetor_escalar">multiplicação vetor termo a termo</a></li>
+            <li><a href="#multiplicação_de_matrizes">multiplicação matrizes</a></li>
+            <li><a href="#eliminação_gaussiana">eliminação gaussiana</a></li>
+            <li><a href="#sistema">sistema</a></li>
+        </ul>
+       </li>
+    </ul>
+  </nav>
+    <div id="Matriz">
+      <h1>Matriz</h1>
+      <div class="container">
+        <div class="Construtor">
+          <h2>Construtor</h2>
+          <div><label for="QtdLinhas">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhas"></div>
+          <div><label for="QtdColunas">Quantidade de colunas :</label> <input type="number" name="" id="QtdColunas"></div>
+          <div><label for="NumerosMatriz">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatriz" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="Criarmatriz()">Criar Matriz</button>
+        </div>
+        <div class="Get">
+          <h2>Get</h2>
+          <div><label for="LinhaMatrizGet">Linha da matriz :</label> <input type="number" name="" id="LinhaMatrizGet"></div>
+          <div><label for="ColunaMatrizGet">Coluna da matriz :</label> <input type="number" name="" id="ColunaMatrizGet"></div>
+          <button onclick="Acharelemento()">Achar Elemento</button>
+          <div><label for="GetResult">Elemento Achado :</label> <input type="number" name="" id="GetResult"></div>
+          <button onclick="Limparmatriz()" class="Limpar" >Limpar</button>
+        </div>
+        <div class="Set">
+          <h2>Set</h2> 
+          <div><label for="LinhaMatrizSet">Linha da matriz :</label> <input type="number" name="" id="LinhaMatrizSet"></div>
+          <div><label for="ColunaMatrizSet">Coluna da matriz :</label> <input type="number" name="" id="ColunaMatrizSet"></div>
+          <div><label for="ValorSet">Valor :</label> <input type="number" name="" id="ValorSet"></div>
+          <button onclick="SetarValor()">Set</button>  
+        </div>
+
+    </div>
+    </div>
+    <hr>
+    <div id="Vetor">
+      <h1>Vetor</h1>
+      <div class="containerV">
+        <div class="Construtor">
+          <h2>Construtor</h2>
+          <div class="QtdElementosVetorV"><label for="QtdElementos">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementos"></div>
+          <div class="NumerosVetorV"><label for="NumerosVetor">Elementos do Vetor :</label> <input type="text" name="" id="NumerosVetor" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="CriarVetor()">Criar Vetor</button>
+        </div>
+        <div class="Get">
+          <h2>Get</h2>
+          <div class="IndiceElementoVetorV"><label for="IndiceGet">Índice do elemento :</label> <input type="number" name="" id="IndiceGet"></div>
+          <button onclick="GetVetor()">Achar Elemento</button>
+          <div class="ElementoAchadoVetorV"><label for="GetResultV">Elemento Achado :</label> <input type="number" name="" id="GetResultV"></div>
+          <button class="LimparV" onclick="LimparVetor()">Limpar</button>
+          
+        </div>
+        <div class="Set">
+          <h2>Set</h2>
+          <div><label for="IndiceSet">Índice do elemento :</label> <input type="number" name="" id="IndiceSet"></div>
+          <div><label for="ValorSetV">Valor :</label> <input type="number" name="" id="ValorSetV"></div>
+          <button onclick="SetarVetorV()">Set</button>  
+        </div>
+        
+      </div>
+
+    </div>
+    <hr>
+    <div id="transposta">
+      <h1>Transposta</h1>
+      <div class="containerT">
+        <div class="Matriz">
+          <h2>Matriz a ser transposta</h2>
+          <div><label for="QtdLinhasO">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasO"></div>
+          <div><label for="QtdColunasO">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasO"></div>
+          <div><label for="NumerosMatrizO">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizO" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="TransporMatriz()">Transpor Matriz</button><button class="LimparT" onclick="LimparMatrizT()">Limpar</button>
+        </div>
+        <div class="MatrizTransposta">
+          <h2>Matriz Transposta</h2>
+          <div class="table">
+          <table id="MatrizTranspostaT"></table>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <hr>
+    <div id="soma_de_matrizes">
+      <h1>Soma de Matrizes</h1>
+      <div class="containerS">
+        <div class="MatrizA">
+          <h2>Matriz A</h2>
+          <div><label for="QtdLinhasA">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasA"></div>
+          <div><label for="QtdColunasA">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasA"></div>
+          <div><label for="NumerosMatrizA">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizA" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="SomarMatrizes()">Somar Matrizes</button>
+          </div>
+          <div class="MatrizB">
+          <h2>Matriz B</h2>
+          <div><label for="QtdLinhasB">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasB"></div>
+          <div><label for="QtdColunasB">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasB"></div>
+          <div><label for="NumerosMatrizB">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizB" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="LimparSomaM()">Limpar</button>
+          </div>
+          <div class="ResultadoSoma">
+            <h2>Resultado</h2>
+            <div class="table">
+            <table id="SomaMatrizes"></table>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+    <hr>
+    <div id="soma_de_vetores">
+      <h1>Soma de Vetores</h1>
+      <div class="containerS">
+        <div class="VetorA">
+          <h2>Vetor A</h2>
+          <div><label for="QtdElementosA">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosA"></div>
+          <div><label for="NumerosVetorA">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorA" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="SomarVetores()">Somar Vetores</button>
+          </div>
+          <div class="VetorB">
+          <h2>Vetor B</h2>
+          <div><label for="QtdElementosB">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosB"></div>
+          <div><label for="NumerosVetorB">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorB" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="LimparSomaV()">Limpar</button>
+          </div>
+          <div class="ResultadoSomaV">
+            <h2>Resultado</h2>
+            <div class="tableV">
+            <table id="SomaVetores"></table>
+            </div>
+          </div>
+
+    </div>
+    </div>
+    <hr>
+    <div id="multiplicação_de_matriz_por_escalar">
+      <h1>Multiplicação Matriz por Número</h1>
+      <div class="containerT">
+        <div class="Matriz">
+          <h2>Matriz a ser multiplicada</h2>
+          <div><label for="QtdLinhasMM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasMM"></div>
+          <div><label for="QtdColunasMM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasMM"></div>
+          <div><label for="NumerosMatrizMM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizMM" placeholder="Ex: (1,2,3,4,5)"></div>
+          <div><label for="NumeroMult">Número a multiplicar a matriz :</label> <input type="number" name="" id="NumeroMult"></div>
+          <button class="MultiplicarMatriz" onclick="MultiplicarMatriz()">Multiplicar Matrizes</button>
+          <button class="LimparMM" onclick="LimparMPE()">Limpar</button>
+        </div>
+        <div class="MatrizTransposta">
+          <h2>Resultado</h2>
+          <div class="table">
+          <table id="MatrizMultiplicada"></table>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <hr>
+    <div id="multiplicação_de_matriz_escalar">
+       <h1>Multiplicação Matriz Termo a Termo</h1>
+      <div class="containerS">
+        <div class="MatrizA">
+          <h2>Matriz A</h2>
+          <div><label for="QtdLinhasAM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasAM"></div>
+          <div><label for="QtdColunasAM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasAM"></div>
+          <div><label for="NumerosMatrizAM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizAM" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="MultiplicarMatrizes()">Multiplicar</button>
+          </div>
+          <div class="MatrizB">
+          <h2>Matriz B</h2>
+          <div><label for="QtdLinhasBM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasBM"></div>
+          <div><label for="QtdColunasBM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasBM"></div>
+          <div><label for="NumerosMatrizBM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizBM" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="LimparME()">Limpar</button>
+          </div>
+          <div class="ResultadoSoma">
+            <h2>Resultado</h2>
+            <div class="table">
+            <table id="ResultadoMatrizesME"></table>
+            </div>
+          </div>
+
+      </div>
+
+
+    </div>
+    <hr>
+    <div id="multiplicação_de_vetor_escalar">
+      <h1>Multiplicação de Vetores Termo a Termo</h1>
+      <div class="containerS">
+        <div class="VetorA">
+          <h2>Vetor A</h2>
+          <div><label for="QtdElementosAM">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosAM"></div>
+          <div><label for="NumerosVetorAM">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorAM" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="MultiplicarVetores()">Multiplicar</button>
+          </div>
+          <div class="VetorB">
+          <h2>Vetor B</h2>
+          <div><label for="QtdElementosBM">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosBM"></div>
+          <div><label for="NumerosVetorBM">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorBM" placeholder="Ex: (1,2,3,4,5)"></div>
+          <button onclick="LimparMV()">Limpar</button>
+          </div>
+          <div class="ResultadoSomaV">
+            <h2>Resultado</h2>
+            <div class="tableV">
+            <table id="ResultadoVetoresME"></table>
+            </div>
+          </div>
+
+    </div>
+
+    </div>
+    <hr>
+    <div id="multiplicação_de_matrizes">
+      <h1>Multiplicação de Matrizes</h1>
+     <div class="containerS">
+       <div class="MatrizA">
+         <h2>Matriz A</h2>
+         <div><label for="QtdLinhasAMM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasAMM"></div>
+         <div><label for="QtdColunasAMM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasAMM"></div>
+         <div><label for="NumerosMatrizAMM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizAMM" placeholder="Ex: (1,2,3,4,5)"></div>
+         <button onclick="Multiplicarmatrizesm()">Multiplicar</button>
+         </div>
+         <div class="MatrizB">
+         <h2>Matriz B</h2>
+         <div><label for="QtdLinhasBMM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasBMM"></div>
+         <div><label for="QtdColunasBMM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasBMM"></div>
+         <div><label for="NumerosMatrizBMM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizBMM" placeholder="Ex: (1,2,3,4,5)"></div>
+         <button onclick="LimparMEM()">Limpar</button>
+         </div>
+         <div class="ResultadoSoma">
+           <h2>Resultado</h2>
+           <div class="table">
+           <table id="ResultadoMatrizesMEM"></table>
+           </div>
+         </div>
+
+     </div>
+
+
+   </div>
+   <hr>
+   <div id="eliminação_gaussiana">
+    <h1>Eliminação Gaussiana</h1>
+    <div class="containerT">
+      <div class="Matriz">
+        <h2>Matriz Ampliada</h2>
+        <div><label for="QtdLinhasG">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasG"></div>
+        <div><label for="QtdColunasG">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasG"></div>
+        <div><label for="NumerosMatrizG">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizG" placeholder="Ex: (1,2,3,4,5)"></div>
+        <button class="MultiplicarMatriz" onclick="Eliminaçãogaussiana()">Aplicar Método</button>
+        <button class="LimparMM" onclick="LimparMG()">Limpar</button>
+      </div>
+      <div class="MatrizTransposta">
+        <h2>Matriz após Eliminação</h2>
+        <div class="table">
+        <table id="Resultadoeliminacaogaussiana"></table>
+        </div>
+      </div>
+
+
+    </div>
+ </div>
+ <hr>
+ <div id="sistema">
+  <h1>Resolução de Sistema</h1>
+  <div class="containerT">
+    <div class="Matriz">
+      <h2>Matriz Ampliada</h2>
+      <div><label for="QtdLinhasS">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasS"></div>
+      <div><label for="QtdColunasS">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasS"></div>
+      <div><label for="NumerosMatrizS">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizS" placeholder="Ex: (1,2,3,4,5)"></div>
+      <button class="MultiplicarMatriz" onclick="ResoluçãoSistema()">Resolver Sistema</button>
+      <button class="LimparMM" onclick="LimparMS()">Limpar</button>
+    </div>
+    <div class="MatrizTransposta">
+      <h2>Resultado</h2>
+      <div class="table">
+      <table id="ResultadoSistema"></table>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+  </div>
+    <script>
+let Matriz = [];
+let Vetor = [];
+let VetorA = []
+let VetorB = []
+let VetorAM = []
+let VetorBM = []
+let VetorME = []
+let VetorSoma = []
+let MatrizOriginal = []
+let MatrizA = []
+let MatrizB = []
+let MatrizSoma = []
+let MatrizMM = []
+let MatrizMultiplicação = []
+let MatrizMEA = []
+let MatrizMEB = []
+let MatrizMultiplicaçãoME = []
+let MatrizMultiplicaçãoM = []
+let MatrizG = []
+let MatrizS = []
+let Nlinha = 0;
+let NColuna = 0;
+let contagemM = 0;
+let contagemV = 0;
+let contagemMO = 0;
+function Criarmatriz(){
+  const Qtdlinha = document.getElementById("QtdLinhas").value;
+  const Qtdcolunas = document.getElementById("QtdColunas").value;
+  Nlinha = Qtdlinha
+  NColuna = Qtdcolunas
+  const Numeross = document.getElementById("NumerosMatriz").value;
+  const Numeros = Numeross.split(',').map(Number);
+  if(Numeros.length > (Qtdlinha * Qtdcolunas)){
+    alert("a quantidade de números e maior que a de elementos!");
+}
+else if(Numeros.length < (Qtdlinha * Qtdcolunas)){
+    alert("a quantidade de números e menor que a de elementos!")
+}
+else{
+  for(var i = 0, c = 0; i < Qtdlinha; i++){
+      Matriz [i] = [];
+      for(var j = 0; j < Qtdcolunas; j++){
+          Matriz[i][j] = Numeros[c];
+          c++;
+      }
+  }
+  if(contagemM == 0){
+  alert("Matriz Criada!");
+  contagemM++;
+  }
+  else{
+    alert("Matriz Atualizada!");
+    contagemM++;
+  }
+
+
+
+}
+
+}
+function Acharelemento(){
+  const Linha = document.getElementById("LinhaMatrizGet").value;
+  const Coluna = document.getElementById("ColunaMatrizGet").value;
+  if (Linha > Nlinha || Coluna > NColuna){
+    alert("Algum Valor Maior que o da matriz");
+  }
+  const resultado = Matriz[Linha - 1][Coluna - 1];
+  document.getElementById("GetResult").value = resultado;
+}
+function SetarValor(){
+    const linha = document.getElementById("LinhaMatrizSet").value;
+    const coluna = document.getElementById("ColunaMatrizSet").value;
+    const Valor = document.getElementById("ValorSet").value;
+    Matriz[linha - 1][coluna - 1] = Valor;
+    alert(`Valor da linha ${linha} coluna ${coluna} Atualizado para ${Valor}`)
+    if(linha == document.getElementById("LinhaMatrizGet").value && coluna == document.getElementById("ColunaMatrizSet").value){
+        document.getElementById("GetResult").value = Valor
+    }
+}
+function Limparmatriz(){
+    document.getElementById("QtdLinhas").value = "";
+    document.getElementById("QtdColunas").value = "";
+    document.getElementById("NumerosMatriz").value = "";
+    document.getElementById("LinhaMatrizGet").value = "";
+    document.getElementById("ColunaMatrizGet").value = "";
+    document.getElementById("GetResult").value = "";
+    document.getElementById("LinhaMatrizSet").value = "";
+    document.getElementById("ColunaMatrizSet").value = "";
+    document.getElementById("ValorSet").value = "";
+}
+function LimparVetor(){
+    document.getElementById("QtdElementos").value = "";
+    document.getElementById("NumerosVetor").value = "";
+    document.getElementById("IndiceGet").value = "";
+    document.getElementById("GetResultV").value = "";
+    document.getElementById("IndiceSet").value = "";
+    document.getElementById("ValorSetV").value = "";
+}
+function CriarVetor(){
+    const QtdElementos = document.getElementById("QtdElementos").value;
+    const Numeross = document.getElementById("NumerosVetor").value;
+    const Numeros = Numeross.split(",").map(Number);
+    if(Numeros.length > QtdElementos){
+        alert("a quantidade de números e maior que a de elementos!");
+    }
+    if(Numeros.length < QtdElementos){
+        alert("a quantidade de números e menor que a de elementos!");
+    }
+    else{
+    for(var i = 0, c = 0; i < QtdElementos; i++, c++){
+        Vetor[i] = Numeros[c];
+    }
+    if(contagemV == 0){
+    alert("O vetor foi criado!");
+    contagemV++
+    }
+    else{
+        alert("O vetor foi atualizado!");
+        contagemV++
+        }
+}
+
+}
+function GetVetor(){
+    const Indice = document.getElementById("IndiceGet").value;
+    const resultado = Vetor[Indice - 1];
+    if(Indice > Vetor.length){
+        alert("o número do indice é maior que o tamanho do vetor")
+    }
+    else{
+    document.getElementById("GetResultV").value = resultado;
+    }
+}
+function SetarVetorV(){
+    const Indice = document.getElementById("IndiceSet").value;
+    const valor = document.getElementById("ValorSetV").value;
+    if(Indice > Vetor.length){
+        alert("o número do indice é maior que o tamanho do vetor")
+    }
+    else{
+    Vetor[Indice - 1] = valor;
+    alert(`O valor de Indice ${Indice} foi atualizado para ${valor}`);
+    if(Indice == document.getElementById("IndiceGet").value){
+        document.getElementById("GetResultV").value = valor
+    }
+    }
+}
+function TransporMatriz(){
+   const QtdLinhas = document.getElementById("QtdLinhasO").value;
+   const QtdColunas = document.getElementById("QtdColunasO").value;
+   const NumerosS = document.getElementById("NumerosMatrizO").value;
+   const Numeros = NumerosS.split(",").map(Number);
+   let MatrizTransposta = [];
+   if(Numeros.length > (QtdColunas * QtdLinhas)){
+    alert("a quantidade de números e maior que a de elementos");
+   }
+else if(Numeros.length < (QtdLinhas * QtdColunas)){
+    alert("a quantidade de números e menor que a de elementos!")
+}
+   else{
+   for(var i = 0, c = 0; i < QtdLinhas; i++){
+    MatrizOriginal[i] = []
+    for(var j = 0; j < QtdColunas; j++, c++){
+        MatrizOriginal[i][j] = Numeros[c];
+    }
+   }
+   for(var I = 0; I < QtdColunas; I++){
+    MatrizTransposta[I] = [];
+    for(var g = 0; g < QtdLinhas; g++){
+        MatrizTransposta[I][g] = MatrizOriginal[g][I]
+    }
+   }
+
+
+   const table = document.getElementById("MatrizTranspostaT");
+   table.innerHTML = "";
+   MatrizTransposta.forEach(row =>{
+    const tr = document.createElement("tr");
+    row.forEach(cell => {
+        const td  = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+    })
+    table.appendChild(tr);
+   })
+
+}
+}
+function LimparMatrizT(){
+    document.getElementById("QtdLinhasO").value = ""
+    document.getElementById("QtdColunasO").value = ""
+    document.getElementById("NumerosMatrizO").value = ""
+    document.getElementById("MatrizTranspostaT").innerHTML = ""
+}
+function SomarMatrizes(){
+    const QtdLinhasA = document.getElementById("QtdLinhasA").value
+    const QtdColunasA = document.getElementById("QtdColunasA").value
+    const NumerosSA = document.getElementById("NumerosMatrizA").value
+    const NumerosA = NumerosSA.split(",").map(Number);
+    const QtdLinhasB = document.getElementById("QtdLinhasB").value
+    const QtdColunasB = document.getElementById("QtdColunasB").value
+    const NumerosSB = document.getElementById("NumerosMatrizB").value
+    const NumerosB = NumerosSB.split(",").map(Number);
+    if(NumerosA.length > (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e maior que a de elementos!");
+}
+    if(NumerosA.length < (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e menor que a de elementos!")
+}
+    if(NumerosB.length > (QtdLinhasB * QtdColunasB)){
+    alert("a quantidade de números de B e maior que a de elementos!");
+}
+    if(NumerosB.length < (QtdLinhasB * QtdColunasB)){
+    alert("a quantidade de números de B e menor que a de elementos!")
+}
+if(NumerosB.length < (QtdLinhasB * QtdColunasB) && NumerosA.length < (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e de B sao menores que a de elementos!")
+}
+if(NumerosB.length > (QtdLinhasB * QtdColunasB) && NumerosA.length > (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e de B sao maiores que a de elementos!")
+}
+if(QtdLinhasA != QtdColunasB || QtdColunasA != QtdColunasB){
+    alert("as ordens das matrizes estão diferentes!")
+}
+else{
+    for(var i = 0, c = 0; i < QtdLinhasA; i++){
+        MatrizA [i] = [];
+        for(var j = 0; j < QtdColunasA; j++, c++){
+            MatrizA[i][j] = NumerosA[c]
+        }
+    }
+    for(var i = 0, c = 0; i < QtdLinhasB; i++){
+        MatrizB [i] = [];
+        for(var j = 0; j < QtdColunasB; j++, c++){
+            MatrizB[i][j] = NumerosB[c]
+        }
+    }
+    for(var i = 0; i < QtdLinhasA; i++){
+        MatrizSoma [i] = []
+        for(var j = 0; j < QtdColunasA; j++){
+            MatrizSoma[i][j] = MatrizA[i][j] + MatrizB[i][j]    
+        }
+    }
+
+    const table = document.getElementById("SomaMatrizes");
+    table.innerHTML = "";
+    MatrizSoma.forEach(row =>{
+     const tr = document.createElement("tr");
+     row.forEach(cell => {
+         const td  = document.createElement("td");
+         td.textContent = cell;
+         tr.appendChild(td);
+     })
+     table.appendChild(tr);
+    })
+
+}
+}
+function LimparSomaM(){
+    document.getElementById("QtdLinhasA").value = ""
+    document.getElementById("QtdColunasA").value = ""
+    document.getElementById("NumerosMatrizA").value = ""
+    document.getElementById("QtdLinhasB").value = ""
+    document.getElementById("QtdColunasB").value = ""
+    document.getElementById("NumerosMatrizB").value = ""
+    document.getElementById("SomaMatrizes").innerHTML = ""
+}
+function SomarVetores(){
+const QtdElementosA = document.getElementById("QtdElementosA").value
+const NumerosSA = document.getElementById("NumerosVetorA").value
+const NumerosA = NumerosSA.split(",").map(Number)
+const QtdElementosB = document.getElementById("QtdElementosB").value
+const NumerosSB = document.getElementById("NumerosVetorB").value
+const NumerosB = NumerosSB.split(",").map(Number)
+if(NumerosA.length > QtdElementosA){
+        alert("a quantidade de números de A e maior que a de elementos!");
+    }
+    if(NumerosA.length < QtdElementosA){
+        alert("a quantidade de números de A e menor que a de elementos!");
+    }
+    if(NumerosB.length > QtdElementosB){
+        alert("a quantidade de números  de B e maior que a de elementos!");
+    }
+    if(NumerosB.length < QtdElementosB){
+        alert("a quantidade de números de B e menor que a de elementos!");
+    }
+    if(QtdElementosA != QtdElementosB){
+        alert("a quantidade de elementos dos vetores estão diferentes!")
+    }
+    else{
+for(var i = 0; i < QtdElementosA; i++){
+    VetorA[i] = NumerosA[i]
+}
+for(var i = 0; i < QtdElementosB; i++){
+    VetorB[i] = NumerosB[i]
+}
+for(var i = 0; i < QtdElementosA; i++){
+    VetorSoma[i] = VetorA[i] + VetorB[i]
+}
+
+const table = document.getElementById("SomaVetores");
+table.innerHTML = "";
+    const tr = document.createElement("tr");
+    VetorSoma.forEach(cell => {
+        const td  = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+    })
+    table.appendChild(tr);
+}
+}
+function MultiplicarMatriz(){
+    const QtdLinhasMM = document.getElementById("QtdLinhasMM").value;
+    const QtdColunasMM = document.getElementById("QtdColunasMM").value;
+    const NumerosSMM = document.getElementById("NumerosMatrizMM").value
+    const NumerosMM = NumerosSMM.split(",").map(Number);
+    const NumeroMM = document.getElementById("NumeroMult").value
+    if(NumerosMM.length > (QtdLinhasMM * QtdColunasMM)){
+    alert("a quantidade de números da matriz e maior que a de elementos!");
+}
+    if(NumerosMM.length < (QtdLinhasMM * QtdColunasMM)){
+    alert("a quantidade de números da matriz e menor que a de elementos!")
+}
+else{
+
+    for(var i = 0, c = 0; i < QtdLinhasMM; i++){
+        MatrizMM [i] = [];
+        for(var j = 0; j < QtdColunasMM; j++, c++){
+            MatrizMM[i][j] = NumerosMM[c]
+        }
+    }
+    for(var i = 0; i < QtdLinhasMM; i++){
+        MatrizMultiplicação [i] = [];
+        for(var j = 0; j < QtdColunasMM; j++){
+            MatrizMultiplicação[i][j] = MatrizMM [i][j] * NumeroMM
+
+        }
+    }
+    const table = document.getElementById("MatrizMultiplicada");
+    table.innerHTML = "";
+    MatrizMultiplicação.forEach(row =>{
+     const tr = document.createElement("tr");
+     row.forEach(cell => {
+         const td  = document.createElement("td");
+         td.textContent = cell;
+         tr.appendChild(td);
+     })
+     table.appendChild(tr);
+    })
+
+}
+}
+
+function LimparSomaV(){
+    document.getElementById("QtdElementosA").value = ""
+    document.getElementById("NumerosVetorA").value = ""
+    document.getElementById("QtdElementosB").value = ""
+    document.getElementById("NumerosVetorB").value = ""
+    document.getElementById("SomaVetores").innerHTML = ""
+}
+function MultiplicarMatrizes(){
+    const QtdLinhasA = document.getElementById("QtdLinhasAM").value
+    const QtdColunasA = document.getElementById("QtdColunasAM").value
+    const NumerosSA = document.getElementById("NumerosMatrizAM").value
+    const NumerosA = NumerosSA.split(",").map(Number);
+    const QtdLinhasB = document.getElementById("QtdLinhasBM").value
+    const QtdColunasB = document.getElementById("QtdColunasBM").value
+    const NumerosSB = document.getElementById("NumerosMatrizBM").value
+    const NumerosB = NumerosSB.split(",").map(Number);
+    if(NumerosA.length > (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e maior que a de elementos!");
+}
+    if(NumerosA.length < (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e menor que a de elementos!")
+}
+    if(NumerosB.length > (QtdLinhasB * QtdColunasB)){
+    alert("a quantidade de números de B e maior que a de elementos!");
+}
+    if(NumerosB.length < (QtdLinhasB * QtdColunasB)){
+    alert("a quantidade de números de B e menor que a de elementos!")
+}
+if(NumerosB.length < (QtdLinhasB * QtdColunasB) && NumerosA.length < (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e de B sao menores que a de elementos!")
+}
+if(NumerosB.length > (QtdLinhasB * QtdColunasB) && NumerosA.length > (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e de B sao maiores que a de elementos!")
+}
+if(QtdLinhasA != QtdColunasB || QtdColunasA != QtdColunasB){
+    alert("as ordens das matrizes estão diferentes!")
+}
+    for(var i = 0, c = 0; i < QtdLinhasA; i++){
+        MatrizMEA[i] = []
+        for(var j = 0; j < QtdColunasA; j++, c++){
+            MatrizMEA[i][j] = NumerosA[c]
+        }
+    }
+    for(var i = 0, c = 0; i < QtdLinhasB; i++){
+        MatrizMEB[i] = []
+        for(var j = 0; j < QtdColunasB; j++, c++){
+            MatrizMEB[i][j] = NumerosB[c]
+        }
+    }
+    for(var i = 0; i < QtdLinhasA; i++){
+        MatrizMultiplicaçãoME[i] = []
+        for(var j = 0; j < QtdLinhasA; j++){
+            MatrizMultiplicaçãoME[i][j] = MatrizMEA[i][j] * MatrizMEB[i][j]
+        }
+    }
+    const table = document.getElementById("ResultadoMatrizesME");
+    table.innerHTML = "";
+    MatrizMultiplicaçãoME.forEach(row =>{
+     const tr = document.createElement("tr");
+     row.forEach(cell => {
+         const td  = document.createElement("td");
+         td.textContent = cell;
+         tr.appendChild(td);
+     })
+     table.appendChild(tr);
+    })
+   
+}
+function LimparMPE(){
+    document.getElementById("QtdLinhasMM").value = ""
+    document.getElementById("QtdColunasMM").value = ""
+    document.getElementById("NumerosMatrizMM").value = ""
+    document.getElementById("QtdLinhasMM").value = ""
+    document.getElementById("QtdColunasMM").value = ""
+    document.getElementById("NumerosMatrizMM").value = ""
+    document.getElementById("NumeroMult").value = ""
+    document.getElementById("MatrizMultiplicada").innerHTML = ""
+}
+function LimparME(){
+    document.getElementById("QtdLinhasAM").value = ""
+    document.getElementById("QtdColunasAM").value = ""
+    document.getElementById("NumerosMatrizAM").value = ""
+    document.getElementById("QtdLinhasBM").value = ""
+    document.getElementById("QtdColunasBM").value = ""
+    document.getElementById("NumerosMatrizBM").value = ""
+    document.getElementById("ResultadoMatrizesME").innerHTML = ""
+}
+function MultiplicarVetores(){
+    const QtdElementosA = document.getElementById("QtdElementosAM").value
+    const ElementosAS = document.getElementById("NumerosVetorAM").value
+    const NumerosA = ElementosAS.split(",").map(Number)
+    const QtdElementosB = document.getElementById("QtdElementosBM").value
+    const ElementosBS = document.getElementById("NumerosVetorBM").value
+    const NumerosB = ElementosBS.split(",").map(Number)
+    if(NumerosA.length > QtdElementosA){
+        alert("a quantidade de números de A e maior que a de elementos!");
+    }
+    if(NumerosA.length < QtdElementosA){
+        alert("a quantidade de números de A e menor que a de elementos!");
+    }
+    if(NumerosB.length > QtdElementosB){
+        alert("a quantidade de números  de B e maior que a de elementos!");
+    }
+    if(NumerosB.length < QtdElementosB){
+        alert("a quantidade de números de B e menor que a de elementos!");
+    }
+    if(QtdElementosA != QtdElementosB){
+        alert("a quantidade de elementos dos vetores estão diferentes!")
+    }
+    else{
+    for(var i = 0; i < QtdElementosA; i++){
+        VetorAM[i] = NumerosA[i]
+    }
+    for(var i = 0; i < QtdElementosB; i++){
+        VetorBM[i] = NumerosB[i]
+    }
+    for(var i = 0; i < QtdElementosA; i++){
+        VetorME[i] = VetorAM[i] * VetorBM[i]
+    }
+    const table = document.getElementById("ResultadoVetoresME");
+table.innerHTML = "";
+    const tr = document.createElement("tr");
+    VetorME.forEach(cell => {
+        const td  = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+    })
+    table.appendChild(tr);
+
+}
+}
+function LimparMV(){
+    document.getElementById("QtdElementosAM").value = ""
+    document.getElementById("NumerosVetorAM").value = ""
+    document.getElementById("QtdElementosBM").value = ""
+    document.getElementById("NumerosVetorBM").value = ""
+    document.getElementById("ResultadoVetoresME").innerHTML = ""
+}
+
+function Multiplicarmatrizesm(){
+    let MatrizAM = []
+    let MatrizBM = []
+    const QtdLinhasA = document.getElementById("QtdLinhasAMM").value
+    const QtdColunasA = document.getElementById("QtdColunasAMM").value
+    const NumerosSA = document.getElementById("NumerosMatrizAMM").value
+    const NumerosA = NumerosSA.split(",").map(Number);
+    const QtdLinhasB = document.getElementById("QtdLinhasBMM").value
+    const QtdColunasB = document.getElementById("QtdColunasBMM").value
+    const NumerosSB = document.getElementById("NumerosMatrizBMM").value
+    const NumerosB = NumerosSB.split(",").map(Number);
+    if(NumerosA.length > (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e maior que a de elementos!");
+}
+    if(NumerosA.length < (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e menor que a de elementos!")
+}
+    if(NumerosB.length > (QtdLinhasB * QtdColunasB)){
+    alert("a quantidade de números de B e maior que a de elementos!");
+}
+    if(NumerosB.length < (QtdLinhasB * QtdColunasB)){
+    alert("a quantidade de números de B e menor que a de elementos!")
+}
+if(NumerosB.length < (QtdLinhasB * QtdColunasB) && NumerosA.length < (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e de B sao menores que a de elementos!")
+}
+if(NumerosB.length > (QtdLinhasB * QtdColunasB) && NumerosA.length > (QtdLinhasA * QtdColunasA)){
+    alert("a quantidade de números de A e de B sao maiores que a de elementos!")
+}
+if(QtdColunasA != QtdLinhasB){
+    alert("quantidade de linhas de A esta diferente da quantidade de colunas de B, logo essa multiplicação é impossível")
+}
+else{
+    for(var i = 0, c = 0; i < QtdLinhasA; i++){
+        MatrizAM[i] = []
+        for(var j = 0; j < QtdColunasA; j++, c++){
+            MatrizAM[i][j] = NumerosA[c]
+        }
+    }
+    for(var i = 0, c = 0; i < QtdLinhasB; i++){
+        MatrizBM[i] = []
+        for(var j = 0; j < QtdColunasB; j++, c++){
+            MatrizBM[i][j] = NumerosB[c]
+        }
+    }
+    for (let i = 0; i < QtdLinhasA; i++) {
+        MatrizMultiplicaçãoM[i] = [];
+        for (let j = 0; j < QtdColunasB; j++) {
+            MatrizMultiplicaçãoM[i][j] = 0;
+        }
+    }
+
+    for (let i = 0; i < QtdLinhasA; i++) {
+        for (let j = 0; j < QtdColunasB; j++) {
+            for (let k = 0; k < QtdColunasA; k++) { 
+                MatrizMultiplicaçãoM[i][j] += MatrizAM[i][k] * MatrizBM[k][j];
+            }
+        }
+    }
+    const table = document.getElementById("ResultadoMatrizesMEM");
+    table.innerHTML = "";
+    MatrizMultiplicaçãoM.forEach(row =>{
+     const tr = document.createElement("tr");
+     row.forEach(cell => {
+         const td  = document.createElement("td");
+         td.textContent = cell;
+         tr.appendChild(td);
+     })
+     table.appendChild(tr);
+    })
+
+}
+}
+function LimparMEM(){
+    document.getElementById("QtdLinhasAMM").value = ""
+    document.getElementById("QtdColunasAMM").value = ""
+    document.getElementById("NumerosMatrizAMM").value = ""
+    document.getElementById("QtdLinhasBMM").value = ""
+    document.getElementById("QtdColunasBMM").value = ""
+    document.getElementById("NumerosMatrizBMM").value = ""
+    document.getElementById("ResultadoMatrizesMEM").innerHTML = ""
+}
+function Eliminaçãogaussiana() {
+    let MatrizG = []
+    const QtdLinhasG = document.getElementById("QtdLinhasG").value;
+    const QtdColunasG = document.getElementById("QtdColunasG").value;
+    const NumerosSG = document.getElementById("NumerosMatrizG").value;
+    const NumerosG = NumerosSG.split(",").map(Number);
+    if(NumerosG.length > (QtdLinhasG * QtdColunasG)){
+    alert("a quantidade de números de A e maior que a de elementos!");
+}
+    if(NumerosG.length < (QtdLinhasG * QtdColunasG)){
+    alert("a quantidade de números de A e menor que a de elementos!")
+}
+else{
+
+    for (var i = 0, c = 0; i < QtdLinhasG; i++) {
+        MatrizG[i] = [];
+        for (var j = 0; j < QtdColunasG; j++, c++) {
+            MatrizG[i][j] = NumerosG[c];
+        }
+    }
+
+    for (let i = 0; i < QtdLinhasG; i++) {
+        if (MatrizG[i][i] === 0) {
+            for (let j = i + 1; j < QtdLinhasG; j++) {
+                if (MatrizG[j][i] !== 0) {
+                    let temp = MatrizG[i];
+                    MatrizG[i] = MatrizG[j];
+                    MatrizG[j] = temp;
+                    break;
+                }
+            }
+        }
+                
+                let pivo = MatrizG[i][i];
+                if (pivo !== 0) {
+                    for (let k = 0; k < QtdColunasG; k++) {
+                        MatrizG[i][k] = MatrizG[i][k] / pivo;
+                    }
+                }
+        
+        for (let j = i + 1; j < QtdLinhasG; j++) {
+            let fator = MatrizG[j][i] / MatrizG[i][i];
+            for (let k = i; k < QtdColunasG; k++) {
+                MatrizG[j][k] -= fator * MatrizG[i][k];
+            }
+        }
+    }
+
+    
+    const table = document.getElementById("Resultadoeliminacaogaussiana");
+    table.innerHTML = "";
+    MatrizG.forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach(cell => {
+            const td = document.createElement("td");
+            td.textContent = cell.toFixed(2);
+            tr.appendChild(td);
+        });
+        table.appendChild(tr);
+    });
+}
+}
+function LimparMG(){
+    document.getElementById("QtdLinhasG").value = ""
+    document.getElementById("QtdColunasG").value = ""
+    document.getElementById("NumerosMatrizG").value = ""
+    document.getElementById("Resultadoeliminacaogaussiana").innerHTML = "" 
+}
+function ResoluçãoSistema(){
+const QtdLinhasS = document.getElementById("QtdLinhasS").value
+const QtdColunasS = document.getElementById("QtdColunasS").value
+const NumerosSS = document.getElementById("NumerosMatrizS").value
+const NumerosS = NumerosSS.split(",").map(Number)
+if(NumerosS.length > (QtdLinhasS * QtdColunasS)){
+    alert("a quantidade de números de A e maior que a de elementos!");
+}
+    if(NumerosS.length < (QtdLinhasS * QtdColunasS)){
+    alert("a quantidade de números de A e menor que a de elementos!")
+}
+else{
+for (var i = 0, c = 0; i < QtdLinhasS; i++) {
+    MatrizS[i] = [];
+    for (var j = 0; j < QtdColunasS; j++, c++) {
+        MatrizS[i][j] = NumerosS[c];
+    }
+}
+for (let i = 0; i < QtdLinhasS; i++) {
+    if (MatrizS[i][i] === 0) {
+        for (let j = i + 1; j < QtdLinhasS; j++) {
+            if (MatrizS[j][i] !== 0) {
+                let temp = MatrizS[i];
+                MatrizS[i] = MatrizS[j];
+                MatrizS[j] = temp;
+                break;
+            }
+        }
+    }
+
+    let pivo = MatrizS[i][i];
+    if (pivo !== 0) {
+        for (let k = 0; k < QtdColunasS; k++) {
+            MatrizS[i][k] = MatrizS[i][k] / pivo;
+        }
+    }
+
+    for (let j = 0; j < QtdLinhasS; j++) {
+        if (i !== j) {
+            let fator = MatrizS[j][i];
+            for (let k = 0; k < QtdColunasS; k++) {
+                MatrizS[j][k] -= fator * MatrizS[i][k];
+            }
+        }
+    }
+}
+
+let matrizColuna = [];
+for (let i = 0; i < QtdLinhasS; i++) {
+    matrizColuna[i] = [MatrizS[i][QtdColunasS - 1]]; 
+}
+
+
+const table = document.getElementById("ResultadoSistema");
+table.innerHTML = "";
+matrizColuna.forEach(row => {
+    const tr = document.createElement("tr");
+    row.forEach(cell => {
+        const td = document.createElement("td");
+        td.textContent = cell.toFixed(2);
+        tr.appendChild(td);
+    });
+    table.appendChild(tr);
+});
+
+
+}
+}
+function LimparMS(){
+    document.getElementById("QtdLinhasS").value = ""
+    document.getElementById("QtdColunasS").value = ""
+    document.getElementById("NumerosMatrizS").value = ""
+    document.getElementById("ResultadoSistema").innerHTML = "" 
+}
+
+
+
+    </script>
+
+</body>
+</html>

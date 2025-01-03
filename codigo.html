@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenario 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+       <li><div id="iamgem"><img src="1 semestre/Projeto Cenário 1/logo-unifor-simbolo-neg.svg" alt=""></div></li>
+       <li id="titulo">CENÁRIO 1</li>
+       <li class="drop"><a href="">Menu de Funções ▼</a> 
+        <ul class="dropdown">
+            <li><a href="#Matriz">Matriz</a></li>
+            <li><a href="#Vetor">Vetor</a></li>
+            <li><a href="#transposta">transposta</a></li>
+            <li><a href="#soma_de_matrizes">soma de matrizes</a></li>
+            <li><a href="#soma_de_vetores">soma de vetores</a></li>
+            <li><a href="#multiplicação_de_matriz_por_escalar">multiplicação matriz por numero</a></li>
+            <li><a href="#multiplicação_de_matriz_escalar">multiplicação matriz termo a termo</a></li>
+            <li><a href="#multiplicação_de_vetor_escalar">multiplicação vetor termo a termo</a></li>
+            <li><a href="#multiplicação_de_matrizes">multiplicação matrizes</a></li>
+            <li><a href="#eliminação_gaussiana">eliminação gaussiana</a></li>
+            <li><a href="#sistema">sistema</a></li>
+        </ul>
+       </li>
+    </ul>
+  </nav>
+    <div id="Matriz">
+      <h1>Matriz</h1>
+      <div class="container">
+        <div class="Construtor">
+          <h2>Construtor</h2>
+          <div><label for="QtdLinhas">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhas"></div>
+          <div><label for="QtdColunas">Quantidade de colunas :</label> <input type="number" name="" id="QtdColunas"></div>
+          <div><label for="NumerosMatriz">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatriz"></div>
+          <button onclick="Criarmatriz()">Criar Matriz</button>
+        </div>
+        <div class="Get">
+          <h2>Get</h2>
+          <div><label for="LinhaMatrizGet">Linha da matriz :</label> <input type="number" name="" id="LinhaMatrizGet"></div>
+          <div><label for="ColunaMatrizGet">Coluna da matriz :</label> <input type="number" name="" id="ColunaMatrizGet"></div>
+          <button onclick="Acharelemento()">Achar Elemento</button>
+          <div><label for="GetResult">Elemento Achado :</label> <input type="number" name="" id="GetResult"></div>
+          <button onclick="Limparmatriz()" class="Limpar" >Limpar</button>
+        </div>
+        <div class="Set">
+          <h2>Set</h2> 
+          <div><label for="LinhaMatrizSet">Linha da matriz :</label> <input type="number" name="" id="LinhaMatrizSet"></div>
+          <div><label for="ColunaMatrizSet">Coluna da matriz :</label> <input type="number" name="" id="ColunaMatrizSet"></div>
+          <div><label for="ValorSet">Valor :</label> <input type="number" name="" id="ValorSet"></div>
+          <button onclick="SetarValor()">Set</button>  
+        </div>
+
+    </div>
+    </div>
+    <hr>
+    <div id="Vetor">
+      <h1>Vetor</h1>
+      <div class="containerV">
+        <div class="Construtor">
+          <h2>Construtor</h2>
+          <div class="QtdElementosVetorV"><label for="QtdElementos">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementos"></div>
+          <div class="NumerosVetorV"><label for="NumerosVetor">Elementos do Vetor :</label> <input type="text" name="" id="NumerosVetor"></div>
+          <button onclick="CriarVetor()">Criar Vetor</button>
+        </div>
+        <div class="Get">
+          <h2>Get</h2>
+          <div class="IndiceElementoVetorV"><label for="IndiceGet">Indice do elemento :</label> <input type="number" name="" id="IndiceGet"></div>
+          <button onclick="GetVetor()">Achar Elemento</button>
+          <div class="ElementoAchadoVetorV"><label for="GetResultV">Elemento Achado :</label> <input type="number" name="" id="GetResultV"></div>
+          <button class="LimparV" onclick="LimparVetor()">Limpar</button>
+          
+        </div>
+        <div class="Set">
+          <h2>Set</h2>
+          <div><label for="IndiceSet">Indice do elemento :</label> <input type="number" name="" id="IndiceSet"></div>
+          <div><label for="ValorSetV">Valor :</label> <input type="number" name="" id="ValorSetV"></div>
+          <button onclick="SetarVetorV()">Set</button>  
+        </div>
+        
+      </div>
+
+    </div>
+    <hr>
+    <div id="transposta">
+      <h1>Tranposta</h1>
+      <div class="containerT">
+        <div class="Matriz">
+          <h2>Matriz a ser transposta</h2>
+          <div><label for="QtdLinhasO">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasO"></div>
+          <div><label for="QtdColunasO">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasO"></div>
+          <div><label for="NumerosMatrizO">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizO"></div>
+          <button onclick="TransporMatriz()">Transpor Matriz</button><button class="LimparT" onclick="LimparMatrizT()">Limpar</button>
+        </div>
+        <div class="MatrizTransposta">
+          <h2>Matriz Trasposta</h2>
+          <div class="table">
+          <table id="MatrizTranspostaT"></table>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <hr>
+    <div id="soma_de_matrizes">
+      <h1>Soma de Matrizes</h1>
+      <div class="containerS">
+        <div class="MatrizA">
+          <h2>Matriz A</h2>
+          <div><label for="QtdLinhasA">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasA"></div>
+          <div><label for="QtdColunasA">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasA"></div>
+          <div><label for="NumerosMatrizA">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizA"></div>
+          <button onclick="SomarMatrizes()">Somar Matrizes</button>
+          </div>
+          <div class="MatrizB">
+          <h2>Matriz B</h2>
+          <div><label for="QtdLinhasB">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasB"></div>
+          <div><label for="QtdColunasB">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasB"></div>
+          <div><label for="NumerosMatrizB">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizB"></div>
+          <button onclick="LimparSomaM()">Limpar</button>
+          </div>
+          <div class="ResultadoSoma">
+            <h2>Resultado</h2>
+            <div class="table">
+            <table id="SomaMatrizes"></table>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+    <hr>
+    <div id="soma_de_vetores">
+      <h1>Soma de Vetores</h1>
+      <div class="containerS">
+        <div class="VetorA">
+          <h2>Vetor A</h2>
+          <div><label for="QtdElementosA">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosA"></div>
+          <div><label for="NumerosVetorA">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorA"></div>
+          <button onclick="SomarVetores()">Somar Vetores</button>
+          </div>
+          <div class="VetorB">
+          <h2>Vetor B</h2>
+          <div><label for="QtdElementosB">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosB"></div>
+          <div><label for="NumerosVetorB">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorB"></div>
+          <button onclick="LimparSomaV()">Limpar</button>
+          </div>
+          <div class="ResultadoSomaV">
+            <h2>Resultado</h2>
+            <div class="tableV">
+            <table id="SomaVetores"></table>
+            </div>
+          </div>
+
+    </div>
+    </div>
+    <hr>
+    <div id="multiplicação_de_matriz_por_escalar">
+      <h1>Multiplicação Matriz por Número</h1>
+      <div class="containerT">
+        <div class="Matriz">
+          <h2>Matriz a ser multiplicada</h2>
+          <div><label for="QtdLinhasMM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasMM"></div>
+          <div><label for="QtdColunasMM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasMM"></div>
+          <div><label for="NumerosMatrizMM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizMM"></div>
+          <div><label for="NumeroMult">Numero a multiplicar a matriz :</label> <input type="number" name="" id="NumeroMult"></div>
+          <button class="MultiplicarMatriz" onclick="MultiplicarMatriz()">Multiplicar Matrizes</button>
+          <button class="LimparMM" onclick="LimparMPE()">Limpar</button>
+        </div>
+        <div class="MatrizTransposta">
+          <h2>Resultado</h2>
+          <div class="table">
+          <table id="MatrizMultiplicada"></table>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <hr>
+    <div id="multiplicação_de_matriz_escalar">
+       <h1>Multiplicação Matriz Termo a Termo</h1>
+      <div class="containerS">
+        <div class="MatrizA">
+          <h2>Matriz A</h2>
+          <div><label for="QtdLinhasAM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasAM"></div>
+          <div><label for="QtdColunasAM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasAM"></div>
+          <div><label for="NumerosMatrizAM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizAM"></div>
+          <button onclick="MultiplicarMatrizes()">Multiplicar</button>
+          </div>
+          <div class="MatrizB">
+          <h2>Matriz B</h2>
+          <div><label for="QtdLinhasBM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasBM"></div>
+          <div><label for="QtdColunasBM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasBM"></div>
+          <div><label for="NumerosMatrizBM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizBM"></div>
+          <button onclick="LimparME()">Limpar</button>
+          </div>
+          <div class="ResultadoSoma">
+            <h2>Resultado</h2>
+            <div class="table">
+            <table id="ResultadoMatrizesME"></table>
+            </div>
+          </div>
+
+      </div>
+
+
+    </div>
+    <hr>
+    <div id="multiplicação_de_vetor_escalar">
+      <h1>Multiplicação de Vetores Termo a Termo</h1>
+      <div class="containerS">
+        <div class="VetorA">
+          <h2>Vetor A</h2>
+          <div><label for="QtdElementosAM">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosAM"></div>
+          <div><label for="NumerosVetorAM">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorAM"></div>
+          <button onclick="MultiplicarVetores()">Multiplicar</button>
+          </div>
+          <div class="VetorB">
+          <h2>Vetor B</h2>
+          <div><label for="QtdElementosBM">Quantidade de elementos :</label> <input type="number" name="" id="QtdElementosBM"></div>
+          <div><label for="NumerosVetorBM">Elementos da matriz :</label> <input type="text" name="" id="NumerosVetorBM"></div>
+          <button onclick="LimparMV()">Limpar</button>
+          </div>
+          <div class="ResultadoSomaV">
+            <h2>Resultado</h2>
+            <div class="tableV">
+            <table id="ResultadoVetoresME"></table>
+            </div>
+          </div>
+
+    </div>
+
+    </div>
+    <hr>
+    <div id="multiplicação_de_matrizes">
+      <h1>Multiplicação de Matrizes</h1>
+     <div class="containerS">
+       <div class="MatrizA">
+         <h2>Matriz A</h2>
+         <div><label for="QtdLinhasAMM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasAMM"></div>
+         <div><label for="QtdColunasAMM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasAMM"></div>
+         <div><label for="NumerosMatrizAMM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizAMM"></div>
+         <button onclick="Multiplicarmatrizesm()">Multiplicar</button>
+         </div>
+         <div class="MatrizB">
+         <h2>Matriz B</h2>
+         <div><label for="QtdLinhasBMM">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasBMM"></div>
+         <div><label for="QtdColunasBMM">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasBMM"></div>
+         <div><label for="NumerosMatrizBMM">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizBMM"></div>
+         <button onclick="LimparMEM()">Limpar</button>
+         </div>
+         <div class="ResultadoSoma">
+           <h2>Resultado</h2>
+           <div class="table">
+           <table id="ResultadoMatrizesMEM"></table>
+           </div>
+         </div>
+
+     </div>
+
+
+   </div>
+   <hr>
+   <div id="eliminação_gaussiana">
+    <h1>Eliminação Gaussiana</h1>
+    <div class="containerT">
+      <div class="Matriz">
+        <h2>Matriz Ampliada</h2>
+        <div><label for="QtdLinhasG">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasG"></div>
+        <div><label for="QtdColunasG">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasG"></div>
+        <div><label for="NumerosMatrizG">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizG"></div>
+        <button class="MultiplicarMatriz" onclick="Eliminaçãogaussiana()">Aplicar Método</button>
+        <button class="LimparMM" onclick="LimparMG()">Limpar</button>
+      </div>
+      <div class="MatrizTransposta">
+        <h2>Matriz após Eliminação</h2>
+        <div class="table">
+        <table id="Resultadoeliminacaogaussiana"></table>
+        </div>
+      </div>
+
+
+    </div>
+ </div>
+ <hr>
+ <div id="sistema">
+  <h1>Resolução de Sistema</h1>
+  <div class="containerT">
+    <div class="Matriz">
+      <h2>Matriz Ampliada</h2>
+      <div><label for="QtdLinhasS">Quantidade de linhas :</label> <input type="number" name="" id="QtdLinhasS"></div>
+      <div><label for="QtdColunasS">Quantidade de Colunas :</label> <input type="number" name="" id="QtdColunasS"></div>
+      <div><label for="NumerosMatrizS">Elementos da matriz :</label> <input type="text" name="" id="NumerosMatrizS"></div>
+      <button class="MultiplicarMatriz" onclick="ResoluçãoSistema()">Resolver Sistema</button>
+      <button class="LimparMM" onclick="LimparMS()">Limpar</button>
+    </div>
+    <div class="MatrizTransposta">
+      <h2>Resultado</h2>
+      <div class="table">
+      <table id="ResultadoSistema"></table>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+  </div>
+    <script>
+
+    </script>
+
+</body>
+</html>

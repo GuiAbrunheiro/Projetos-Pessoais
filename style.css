@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+nav {
+    height: fit-content;
+    background-color: rgb(57, 57, 224);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0;
+    background-color: rgb(57, 57, 224);
+    flex-wrap: wrap;
+}
+
+#titulo {
+    font-size: 20px;
+    color: white;
+}
+
+ul li {
+    position: relative;
+    margin: 5px 0;
+}
+
+ul li svg {
+    width: 40px;
+    height: auto;
+    margin: 0 auto;
+}
+
+ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    background-color: #3939e0;
+}
+
+ul li ul.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(143, 143, 189);
+    display: none;
+    min-width: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown li a {
+    padding: 10px 20px;
+    background-color: rgb(115, 115, 187);
+    color: rgb(255, 255, 255);
+}
+
+ul li a:hover,
+ul li ul.dropdown li a:hover {
+    background-color: rgb(129, 129, 192);
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+#Matriz,
+#Vetor,
+#transposta,
+#soma_de_matrizes,
+#multiplicação_de_matrizes,
+#sistema {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 100px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.container,
+.containerV,
+.containerT,
+.containerS {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+.Construtor,
+.Get,
+.Set,
+.Matriz,
+.MatrizTransposta,
+.MatrizA,
+.MatrizB,
+.ResultadoSoma,
+.VetorA,
+.VetorB,
+.ResultadoSomaV {
+    border: solid #0A0A23 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #111141;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3939e0;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container,
+    .containerV,
+    .containerT,
+    .containerS {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Construtor,
+    .Get,
+    .Set,
+    .Matriz,
+    .MatrizTransposta,
+    .MatrizA,
+    .MatrizB,
+    .ResultadoSoma,
+    .VetorA,
+    .VetorB,
+    .ResultadoSomaV {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
